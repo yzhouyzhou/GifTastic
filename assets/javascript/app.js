@@ -16,13 +16,13 @@ function displayAnimalImg() {
         console.log(response);
         var count = MAX_NUM_IMAGES;
         for (var i = 0; i < MAX_NUM_IMAGES; i++) {
-            var stillImgUrl = response.data[i].images.downsized_still.url;
-            var animateUrl = response.data[i].images.downsized.url;
+            var stillImgUrl = response.data[i].images.original_still.url;
+            var animateUrl = response.data[i].images.original.url;
             var aCard = $("<div>");
             // a card contains an img name and an img
             aCard.addClass("card-div");
             var aSpan = $("<span>");
-            aSpan.html(animal + " gif " + count);
+            aSpan.html(animal + " gif " + count + ": " + response.data[i].rating);
             var anImg = $("<img>");
             anImg.attr("src", stillImgUrl);
             anImg.attr("url-still", stillImgUrl);
