@@ -14,24 +14,34 @@ function displayAnimalImg() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        var count = MAX_NUM_IMAGES;
         for (var i = 0; i < MAX_NUM_IMAGES; i++) {
-            var stillImgUrl = response.data[i].images.original_still.url;
-            var animateUrl = response.data[i].images.original.url;
+            var stillImgUrl = response.data[i].images.downsized_still.url;
+            var animateUrl = response.data[i].images.downsized.url;
+            // shrink the image size
+            var widthSize = parseInt(response.data[i].images.downsized_still.width) / 1.5;
+            if (widthSize > 220) {
+                widthSize /= 2;
+            }
+
             var aCard = $("<div>");
-            // a card contains an img name and an img
+            // a card contains an img name rating and an img
             aCard.addClass("card-div");
+            aCard.attr("width", widthSize);
+            // For image rating
             var aSpan = $("<span>");
-            aSpan.html(animal + " gif " + count + ": " + response.data[i].rating);
+            aSpan.html("Rating: " + response.data[i].rating);
+            // For image
             var anImg = $("<img>");
             anImg.attr("src", stillImgUrl);
             anImg.attr("url-still", stillImgUrl);
             anImg.attr("data-state", "still");
             anImg.attr("url-animate", animateUrl);
+
+            anImg.attr("width", widthSize);
             anImg.addClass("gif");
             aCard.append(aSpan, anImg);
             $("#img-display").prepend(aCard);
-            count--;
+
         }
     });
 }

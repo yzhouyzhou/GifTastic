@@ -1,22 +1,39 @@
 body {
     margin: 10px;
     font-family: "Stylish";
-    font-size: 28px;
+    font-size: 25px;
+    max-width: 1080px;
+    width: 100%;
+    min-height: 660px;
+    /* border: 3px solid grey; */
+    background: url("../images/concrete_seamless.png");
+}
+
+#img-display {
+    max-width: 1020px;
+    width: 100%;
 }
 
 .card-div {
     position: relative;
     float: left;
-    margin: 2px;
-    max-width: 220px;
-    width: 100%;
-    text-align: center;
+    margin: 10px 1px;
+    padding: 10px 1px;
 }
 
 img {
-    max-width: 220px;
-    width: 100%;
+    margin-top: 10px;
+    /* border: 3px solid grey; */
+    padding: 15px 2px;
     height: 180px;
+}
+
+span {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
 }
 
 button {
