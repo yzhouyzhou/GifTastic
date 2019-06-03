@@ -1,11 +1,10 @@
 body {
     margin: 10px;
     font-family: "Stylish";
-    font-size: 25px;
+    font-size: 28px;
     max-width: 1080px;
     width: 100%;
     min-height: 660px;
-    /* border: 3px solid grey; */
     background: url("../images/concrete_seamless.png");
 }
 
@@ -23,7 +22,6 @@ body {
 
 img {
     margin-top: 10px;
-    /* border: 3px solid grey; */
     padding: 15px 2px;
     height: 180px;
 }
@@ -33,7 +31,8 @@ span {
     top: 0px;
     width: 100%;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 2px;
+    font-size: 18px;
 }
 
 button {
